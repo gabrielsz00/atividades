@@ -1,84 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Bootstrap Example</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <title>Site da Escola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="estilo.css">
+
 </head>
 
 <body>
 
-    <div class="container">
-
-        <section id="app">
-            <h1>Apps</h1>
-            <div class="line"></div>
-            <iframe width="400" height="620" style="border: 0px;" src="https://studio.code.org/projects/applab/TnYBodnn3x0rNhYb4J9J-hZPjzgOqIRDG7vkSP2WJCI/embed"></iframe>
-            <iframe width="400" height="620" style="border: 0px;" src="https://studio.code.org/projects/applab/bpWFoLtwz3JGl9i2jM7xajXQLN8pCbMEekad-4FAscI/embed"></iframe>
-        </section>
 
 
 
-        <h2>Click On The Games To Explore</h2>
+  <nav class="navbar-inverse myNavbar"> 
 
-        <h5>This games are bulid in game lab, click on the game to play</h5>
-
-        <div id="myCarousel" class="carousel slide">
-            <center>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <a href="https://studio.code.org/projects/gamelab/Sdt_OgR8VajkwZ9t45UeVtzMLGiyqhNFJexB9eCe480" target="_blank">
-                            <img src="game1.png">
-                        </a>
-                        <p>Car Racing</p>
-                    </div>
-
-                    <div class="item">
-                        <a href="https://studio.code.org/projects/gamelab/N25kriFEAiBTZwfbYpDjc_qryNjSBhYW-3fOuYRt_SI" target="_blank">
-                            <img src="game2.png">
-                        </a>
-                        <p>Be in space</p>
-                    </div>
-                    
-                      <div class="item">
-                        <a href="https://studio.code.org/projects/playlab/Xoq31TZJRl0W9K95JthlADu6tbI1xGTsVHpOvYsNtuE" target="_blank">
-                            <!--add the source of the image as "game3.PNG"-->
-                            <img src="game3.PNG">
-                        </a>
-                        <p>Bird hunting for pie</p>
-                    </div>
-                    
-                    <div class="item">
-                        <!--Add
-                        "https://studio.code.org/projects/playlab/WzncdAxXTuhs9JIxkX2v6qScTqL5bBzoUdfsqrxF4fI"
-                         in href part  -->
-                        <a href="https://studio.code.org/projects/playlab/WzncdAxXTuhs9JIxkX2v6qScTqL5bBzoUdfsqrxF4fI" target="_blank">
-                           <img src="game4.PNG">
-                        </a>
-                        <p>Password Checker</p>
-                    </div>
-
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <!--provide class "glyphicon glyphicon-chevron-right" for the span tag below-->
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-
-            </center>
-        </div>
-
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+            <a href="#" class="navbar-brand">EEB Prof Cecília Lotin</a>
     </div>
+    <div class="collapse navbar-collapse" id="myNavbar"> 
+    <ul class="nav navbar-nav"> 
+        <li><a href="#videos"> Vídeos </a> </li>
+        <li><a href="#Trabalhos"> Trabalhos </a> </li>
+        <li><a href="#escritos"> Escritos </a> </li>
+        <li><a href="#contato"> Contatos </a> </li>
+</ul>
+
+</nav>
+
+<h1>EEB Prof Cecília Lotin</h1>
+<p>Escola de educação basica</p>
+<img src="foto1.jpg" >
+<br>
+<br>
+<h1>Lugares da escola.</h1>
+<div class="viagem_principal">
+  <img src="gin.jpg">
+  <h4><kbd>Ginásio</kbd></h4>
+<hr>
+    <h5>Usado para educação física e auditório.</h5>
+    <img src="refe.jpg">
+    <h4><kbd>Refeitório</kbd></h4>
+  <h5>Usado para o lanche e avisos rápidos.</h5>
+  <img src="hort.jpg">
+  <h4><kbd>Horta</kbd></h4>
+  <h5>Usado para cultivar chás em temperos.</h5>
+</div>
+
+
+<div class="bg-primary filmesHead" data-toggle="collapse" data-target="#Mural" >
+  <span class="glyphicon glyphicon-films"></span>Mural de Trabalhos<i class="fa fa-sort-desc"></i>
+</div>
+<div id="Mural" class="collapse">
+  <div class="Textodofilme"><img src="TRABA.jpg" class="img-responsive img-thumbnail" id="traba"><h5 id="texto1" class="text-success">Mural de Trabalhos
+  <span class="glyphicon glyphicon-star"></span>
+  <span class="glyphicon glyphicon-star"></span>
+  <span class="glyphicon glyphicon-star"></span>
+  <span class="glyphicon glyphicon-star"></span>
+  <span class="glyphicon glyphicon-star"></span>
+</h5>
+<p>Mural para expor trabalhos e atividades dos alunos.</p>
+
+
+</div>
+</div>
+
+<br>
+
+<div class="bg-primary filmesHead" data-toggle="collapse" data-target="#homenageados" >
+  <span class="glyphicon glyphicon-films"></span>Alunos homenageados <i class="fa fa-sort-desc"></i>
+</div>
+<div id="homenageados" class="collapse">
+  <div class="Textodofilme"><img src="hom.jpg" class="img-responsive img-thumbnail" id="hom"><h5 id="texto1" class="text-success">Alunos homenageados
+  <span class="glyphicon glyphicon-star"></span>
+  <span class="glyphicon glyphicon-star"></span>
+  <span class="glyphicon glyphicon-star"></span>
+  <span class="glyphicon glyphicon-star"></span>
+</h5>
+
+<p>Homenagear ex alunos da escola.</p>
+</div>
+</div>
 
 </body>
 
