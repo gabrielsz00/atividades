@@ -1,89 +1,103 @@
-canvas = document.getElementById('myCanvas')
-ctx = canvas.getContext("2d")
+canvas = document.getElementById("myCanvas")
+ctx = canvas.getContext("2d");
 
-img_width = 300;
-img_height = 100;
+carHeight = 100;
+carWidth = 100;
 
-var img_image;
+background_image = "parkingLot.jpg";
+greencar_image = "car2.png";
 
-
-img_x = 100;
-img_y = 100;
+carX = 10;
+carY = 10;
 
 function add() {
-	img_imgTag = new Image(); //definindo uma variável com uma nova imagem
-	img_imgTag.onload = uploadimg; // ajustando uma função, ao carregar essa variável
-	img_imgTag.src = img_image;   // carregar uma imagem
+	backgroundImgTag = new Image();
+    backgroundImgTag.onload = uploadBackground;
+    backgroundImgTag.src = background_image
+
+    carImgTag = new Image();
+    carImgTag.onload = uploadgreencar;
+    carImgTag.src = greencar_image
 }
 
-function uploadimg() {
+function uploadBackground() {
+	ctx.drawImage(backgroundImgTag, 0, 0, canvas.width, canvas.height);  
 
-	ctx.drawImage(img_imgTag, img_x, img_y, img_width, img_height);
 }
 
-window.addEventListener("keydown", myKeyDown);
+function uploadgreencar() {
+	ctx.drawImage(carImgTag, carX, carY, carWidth, carHeight);    
+	
+}
 
-function myKeyDown(e)
+
+window.addEventListener("keydown", my_keydown);
+
+function my_keydown(e)
 {
 	keyPressed = e.keyCode;
 	console.log(keyPressed);
+		if(keyPressed == '38')
+		{
+			up();
+			console.log("up");
+		}
 	
-		if((keyPressed >=97 && keyPressed<=122)|| (keyPressed >=65 && keyPressed<=90)){
-		aplhabetkey();
-		document.getElementById("d1").innerHTML="Você pressionou uma tecla do alfabeto";
-}
-else if(keyPressed >=48 && keyPressed<=57)
+		if(keyPressed == '40')
 		{
-			numberkey();
-			document.getElementById("d1").innerHTML="Você prssionou uma tecla número";
-			console.log("Number key");
+			down();
+			console.log("down");
 		}
-		else if(keyPressed >=37 && keyPressed<=40)
+		
+		if(keyPressed == '37')
 		{
-			arrowkey();
-			document.getElementById("d1").innerHTML="Você pressionou uma tecla direcional";
-			console.log("Arrow Key");
+			left();
+			console.log("left");
 		}
-		else if((keyPressed ==17)|| (keyPressed ==18 || keyPressed ==27))
-		{
-			specialkey();
-			document.getElementById("d1").innerHTML="Você pressionou ctrl/esc/alt";
-			console.log("special key");
-		}
-	else{
-		otherkey();
-		document.getElementById("d1").innerHTML="Você pressionou um símbolo ou outra tecla";
-	}
-}
-
-
-
-
-
-
-function aplhabetkey()
-{
-	img_image = "alfabeto.png"
-	add();
-}
-function numberkey()
-{
-	img_image = "número.png"
-	add();
-}
-function arrowkey()
-{
-	img_image = "direcional.png"
-	add();
-}
-function specialkey()
-{
-	img_image = "especial.png"
-	add();
-}
-function otherkey()
-{
-	img_image="outras.png";
-	add();
-}
 	
+		if(keyPressed == '39')
+		{
+			right();
+			console.log("right");
+		}
+		
+		
+}
+
+function up()
+{
+	if (carY >= 0){
+        carY = carY - 10;
+    uploadBackground()
+    uploadgreencar()
+    }
+
+}
+
+
+function down()
+{
+	if (carY <= 500){
+        carY = carY + 10;
+    uploadBackground()
+    uploadgreencar()
+    }
+}
+
+function left()
+{
+	if (carX >= 0){
+        carX = carX - 10;
+    uploadBackground()
+    uploadgreencar()
+    }
+}
+
+function right()
+{
+	if (carX <= 700){
+        carX = carX + 10;
+    uploadBackground()
+    uploadgreencar()
+    }
+}
