@@ -1,28 +1,15 @@
-body
+.bodyBackground 
 {
-    text-align: center;
+    background-image:url(hOye.gif);
+    background-position:center;
+    background-size:cover;
 }
-.container{
-  background-color: mediumaquamarine;  
-}
-#app {
-    background-color: aliceblue;
+#myCanvas
+{
+   border-width: 10px;
+   border-color: white;
+   background-size: cover;
+   background-image: url("BirthdayImage.jpg");
+   border-style: ridge;
 }
 
-#myCarousel
-{
-    background-color: red;
-}
-
-#myCarousel img
-{
-    height: 300px;
-    margin-top: 35px;
-}
-
-.carousel-inner p
-{
-    margin-top: 15px;
-    color : white;
-    font-size: 20px;
-}
