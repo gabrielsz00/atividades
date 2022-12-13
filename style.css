@@ -92,3 +92,7 @@ background-image: linear-gradient(to right top, #00bd4f, #007226);
 {
 	padding-left:5px;color:grey;
 }
+
+#msg{
+	width: 900px;
+}
