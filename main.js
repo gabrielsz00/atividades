@@ -1,110 +1,78 @@
+var SpeechRecognition = window.webkitSpeechRecognition;
+var Content;
+var recognition = new SpeechRecognition();
 
-canvas = new fabric.Canvas("myCanvas")
-
-ballX = 0
-ballY = 0
-
-holeX = 800
-holeY = 400
-
-
-blockImageWidth = 5;
-blockImageHeight = 5;
-
-function loadImg(){
-	fabric.Image.fromURL("golf-h.png", function (img){
-		holeobj = img 
-		holeobj.scaleToWidth(50)
-		holeobj.scaleToHeight(50)
-		holeobj.set({top: holeY, left: holeX})
-		canvas.add(holeobj)
-	}
-	)
-	newImage();
-}
-
-
-function newImage()
+function start()
 {
-	fabric.Image.fromURL("ball.png", function (img){
-		ballobj = img 
-		ballobj.scaleToWidth(50)
-		ballobj.scaleToHeight(50)
-		ballobj.set({top: ballY, left: ballX})
-		canvas.add(ballobj)
-	}
-	)
-}
+    recognition.start();
+} 
 
-window.addEventListener("keydown", myKeyDown);
 
-function myKeyDown(e)
-{
-	keyPressed = e.keyCode;
-	console.log(keyPressed);
-	if (ballX == holeX && ballY == holeY){
-		canvas.remove(ballobj)
-	}
-	else{
-		if(keyPressed == '38')
-		{
-			up();
-			console.log("up");
-		}
-		if(keyPressed == '40')
-		{
-			down();
-			console.log("down");
-		}
-		if(keyPressed == '37')
-		{
-			left();
-			console.log("left");
-		}
-		if(keyPressed == '39')
-		{
-			right();
-			console.log("right");
-		}
-	}
-	
-	function up()
-	{
-		if(ballY >= 0){
-			ballY = ballY - blockImageHeight
-			canvas.remove(ballobj)
-			newImage()
-	}
+camera = document.getElementById("camera");
+Webcam.set({
+    width:500,
+    height:400,
+    image_format : 'jpeg',
+    jpeg_quality:90
+});
 
-	function down()
-	{
-		if(ballY <= 450){
-			ballY = ballY + blockImageHeight
-			canvas.remove(ballobj)
-			newImage()
-	}
 
-	function left()
-	{
-		if(ballX >5)
-		{
-			ballX = ballX - blockImageWidth
-			canvas.remove(ballobj)
-			newImage()
-		}
-	}
 
-	function right()
-	{
-		if(ballX <=1050)
-		{
-			ballX = ballX + blockImageWidth
-			canvas.remove(ballobj)
-			newImage()
-		}
-	}
-	
-}
+function speak(){
+
+    
+    var synth = window.speechSynthesis;
+    Webcam.attach(camera);
+
+    speakData = "Tirando sua selfie em 5 segundos";
+    var utterThis = new SpeechSynthesisUtterance(speakData);
+    synth.speak(utterThis);
+
+    setTimeout(function()
+    {
+    imgId = "selfie1";
+    takeSelfie();
+    
+    speakData = "Tirando sua selfie em 5 segundos";
+    var utterThis = new SpeechSynthesisUtterance(speakData) ;
+    synth.speak(utterThis);
+    }, 5000) ;
+
+    setTimeout(function()
+    {
+    imgId = "selfie2";
+    takeSelfie();
+    
+    speakData = "Tirando sua selfie em 10 segundos";
+    var utterThis = new SpeechSynthesisUtterance(speakData) ;
+    synth.speak(utterThis);
+    }, 10000) ;
+
+    setTimeout(function()
+    {
+    imgId = "selfie3";
+    takeSelfie();
+    
+    speakData = "Tirando sua selfie em 15 segundos";
+    var utterThis = new SpeechSynthesisUtterance(speakData) ;
+    synth.speak(utterThis);
+    }, 15000) ;
+       
 
 }
+
+function takeSelfie(){
+console.log(imgId);
+
+Webcam.snap(function(data_uri){
+if(imgId=="selfie1"){
+document.getElementById("result1").innerHTML = '<img id="selfie1" src="'+data_uri+'"/>';
+}
+if(imgId=="selfie2"){
+    document.getElementById("result2").innerHTML = '<img id="selfie2" src="'+data_uri+'"/>';
+    }
+if(imgId=="selfie3"){
+        document.getElementById("result3").innerHTML = '<img id="selfie3" src="'+data_uri+'"/>';
+        }    
+    });
 }
