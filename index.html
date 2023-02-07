@@ -1,55 +1,55 @@
+ 
 <html>
-
-<head>
-    <title>Aplicativo de Colagem</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Identificador de Imagens</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <link href="style.css" rel="stylesheet">
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js" type="text/javascript"></script>
+   <link rel="stylesheet" href="style.css">
+  
+  </head>
 
-</head>
-
-<body>
+  <body>
+  <div class="container">
+    
     <center>
-        <h1>Aplicativo de Colagem</h1>
+      <h3 class="btn btn-default heading">Reconhecimento Facial</h3>
+      <br><br>
+
+      <p style="font-size: 22px;">O modelo foi treinado para indentificar diferentes pessoas: </p>
+
+      <b class="nameOfObjects">
+        Gabriel
         <hr>
-        <h4>Assim que o pop-up aparecer, clique em Permitir. Depois pode falar o comando.</h4>
+        Nádia
+        <hr>
+        Davi
+        <hr>
+      </b>
 
-        <h3>Diga "selfie" para tirar suas selfies e fazer a colagem.</h3>
+      <label>Webcam- </label>
+      <div id="camera"></div>
+      <br><br>
+      <div id="result"></div>
+      <br><br>
+      <button onclick="takeSnapshot();" class="btn btn-primary">Capturar Imagem</button>
+      <br><br>
+      <button onclick="check();" class="btn btn-success">Identificar Imagem</button>
+      <br><br>
 
-        <button class="btn btn-lg btn-primary" onclick="start()">Iniciar</button>
-        <h4>Pressione o botão Iniciar</h4>
-
-        <label>Sua webcam: </label>
-        <div id="camera"></div>
-
-        <br>
-
-        <label>Sua selfie vai aparecer aqui: </label>
-        <br>
-        <div id="resultRow">
-            <div id="result1" class="column">
-                <img src="">
-            </div>
-
-            <div id="result2" class="column">
-                <img src="">
-            </div>
-
-            <div id="result3" class="column">
-                <img src="">
-            </div>
-        </div>
+      <p style="font-size: 22px;">Objeto: <span id="resultObjectName" class="texto"></span> </p>
+      <p style="font-size: 22px;">Precisão: <span id="resultObjectAccuracy" class="texto"></span> </p>
     </center>
 
-    <div class="copy_right_footer">
-        Desenvolvido por - Pedro
-      </div>
-    <script src="main.js"></script>
-</body>
+  </div>
+<script src="main.js"></script>
 
+  </body>
 </html>
+
+ 
