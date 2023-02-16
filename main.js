@@ -14,4 +14,24 @@ function takeSnapshot(){
     })
 }
 
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/UOtSP14hU/', modelLoaded)
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/Wkuy0JsB8/model.json', modelLoaded)
+
+function modelLoaded(){
+    console.log("modelo carregado!")
+}
+
+function check(){
+    img = document.getElementById("captured_image")
+    classifier.classify(img, gotResult)
+}
+
+function gotResult(error, results){
+    if(error){
+        console.error(error)
+    }
+    else{
+        console.log(results)
+        document.getElementById("resultObjectName").innerHTML = results[0].label
+        document.getElementById("resultObjectAccuracy").innerHTML = results[0].confidence.toFixed(2)
+    }
+}
