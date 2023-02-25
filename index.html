@@ -1,55 +1,34 @@
- 
 <html>
   <head>
-    <title>Identificador de Imagens</title>
+    <title>App web Identificador de Sons</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
     <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
-
-   <link rel="stylesheet" href="style.css">
-  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
   <body>
-  <div class="container">
-    
-    <center>
-      <h3 class="btn btn-default heading">Reconhecimento Facial</h3>
-      <br><br>
-
-      <p style="font-size: 22px;">O modelo foi treinado para indentificar diferentes pessoas: </p>
-
-      <b class="nameOfObjects">
-        Gabriel
-        <hr>
-        Nádia
-        <hr>
-        Davi
-        <hr>
-      </b>
-
-      <label>Webcam- </label>
-      <div id="camera"></div>
-      <br><br>
-      <div id="result"></div>
-      <br><br>
-      <button onclick="takeSnapshot();" class="btn btn-primary">Capturar Imagem</button>
-      <br><br>
-      <button onclick="check();" class="btn btn-success">Identificar Imagem</button>
-      <br><br>
-
-      <p style="font-size: 22px;">Objeto: <span id="resultObjectName" class="texto"></span> </p>
-      <p style="font-size: 22px;">Precisão: <span id="resultObjectAccuracy" class="texto"></span> </p>
-    </center>
-
-  </div>
+    <div class="col-xs-12 header_div text-center">
+      <h2>Sons controlados por animais</h2>     
+      <p>Nota: Reproduza diferentes sons, como latidos e miados</p>     
+    </div>
+    <div class="col-xs-12 main_div">
+      <center>
+      <button class="btn btn-info" onclick="startClassification();"> INICIAR </button>
+      <h4 id="result_count"> </h4>
+      <h3 id="result_label">Posso ouvir - </h3>
+        <br>
+        <img id="animal_image" src="listen.gif" width="300" height="300">
+      </center>
+      </div>
+      <div class="col-xs-12 copy_right_footer">
+        Desenvolvido por - Equipe BYJU'S
+        
+      </div>
 <script src="main.js"></script>
-
   </body>
 </html>
-
- 
