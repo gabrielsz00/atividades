@@ -1,6 +1,6 @@
 body
 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Roboto Slab', serif;
   background: #f5dbda;
 }
 
@@ -35,3 +35,5 @@ body
    text-align: center;
    text-shadow: 5px 5px 5px rgb(151, 149, 149);
 }
+
+#animal_image
