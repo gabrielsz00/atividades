@@ -1,66 +1,45 @@
- 
 <html>
-  <head>
-    <title>Emoção em</title>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Introdução à p5.js</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
+  <style type="text/css">
+  h3
+  {
+    font-size: 25px !important;
+  }
+  canvas {
+  	border:1px solid black;
+  }
+  </style>
+</head>
 
-  <body>
-  <div class="container">
-      <center>
-<h3 class="btn btn-warning heading">APP EMOÇÃO EM EMOJI<br>
-<span>&#x1F44D;</span>
-<span>&#x1F44D;</span>
-<span>&#x1F590; </span>
- </h3>
-      <br><br>
-
-      <p style="font-size: 22px;" id="texto">Tire sua selfie para gerar o emoji
-      	<br>
-        <b style="color: yellow">Você está com o polegar pra cima?</b>
-        <br>
-        <b style="color: black">Você está com o polegar pra baixo?</b>
-        <br>
-        <b style="color: red">Você está com a mão aberta?</b>
-        <br>
-      </p>
-
-      <div class="col-md-4 col-sm-12 col-xs-12">
-        <label>Visualização da WebCam</label>
-        <div id="camera"></div>
-        <br><br>
-        <button onclick="takeSnapshot()" class="btn btn-success">Capturar Imagem</button>
-      </div>
-      <div class="col-md-4 col-sm-12 col-xs-12">
-        <label>Previsão 1:</label>
-
-        <p class="emotionName" id="resultemotionname"></p>
-        <p class="emoji" id="updateemoji"></p>
-
-        <p class="emotionName" id="resultemotionname2"></p>
-        <p class="emoji" id="updateemoji2"></p>
-
-      </div>
- <div class="col-md-4 col-sm-12 col-xs-12">
-  <label>Foto</label>
-<div id="result"></div>
-<br> <br>
-<button onclick="check()" class="btn btn-warning">Prever Emoção</button>
-    </center>
-
-  </div>
-
-<script src="main.js"></script>
-
-  </body>
-</html>
+<body>
+<div class="container">
+	<h3 class="btn btn-primary">Introdução à p5.js</h3>
+	<hr>
 
  
+
+  <br>
+  <br>
+
+  
+
+
+
+  <button onclick="takeSnapshot()" class="btn btn-success">Tirar foto</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+
+</html>
+
