@@ -1,36 +1,22 @@
-function preload(){
+noseX=0;
+noseY=0;
 
+function preload() {
+  clownNose = loadImage('https://i.postimg.cc/43d7pVtP/mascara-Personalizado-1.png');
 }
 
-function setup(){
-    canvas = createCanvas(640, 480)
-    canvas.position(650, 90)
-    video = createCapture(VIDEO)
-    video.hide()
-    tintColor = ""
+function setup() {
+  canvas = createCanvas(500, 500);
+  canvas.center();
+  video = createCapture(VIDEO);
+  video.size(500, 500);
+  video.hide();
 
+  poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose', gotPoses);
 }
 
-function draw(){
-    image(video, 0, 0, 640, 480)
-    tint(tintColor)
-    fill(0,191,255)
-    rect(00, 0, 700, 10);
-    rect(630, 0, 10, 7000);
-    rect(0, 0, 10, 7000);
-    rect(00, 470, 700, 10);
-    fill(255,255,255)
-    text('Minha foto',230, 475)
-    textSize(50);
-    textFont('Impact')
-    
-}
-
-function takeSnapshot(){
-   save(tintColor) 
-}
-
-function filterTint(){
-    tintColor = document.getElementById("colorname").value
+function modelLoaded() {
+  console.log('PoseNet foi inicializado');
 }
 

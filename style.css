@@ -1,40 +1,7 @@
-body
-{
-  color: white;
-  background: #00cc66;
-}
-span
-{
-  font-size: 30px;
-}
-#camera , #result
-{
-  border: 2px dashed black;
-  width: 350px;
-  height: 300px; 
-}
-#resultEmotionName ,#resultEmotionName2 
-{
-  color: black;
-}
-.emotionName
-{
-  font-size: 40px;
-}
-.emoji
-{
-  font-size:48px;
-}
-.heading{
-  font-size: 23px;
-  border-radius: 10px;
-  letter-spacing: 8px;
-}
-
-label{
-  font-size: 14px;
-  color: #62b33a;
-  padding: 3px;
-  border-radius: 10px;
-  background-color: white;
-}
+  h3
+  {
+    font-size: 25px !important;
+  }
+  canvas {
+    border:2px dashed black;
+  }
