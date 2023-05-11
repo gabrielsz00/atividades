@@ -2,6 +2,8 @@ noseX=0;
 noseY=0;
 posx = 250;
 posy = 302;
+
+
 tamanho = 430
 img= 'https://i.postimg.cc/4yv7ZTj2/aaaaaasdadad.png'
 salvar = 'foto'
@@ -48,14 +50,17 @@ function takeSnapshot(){
 }
 
 function coco(){
+  padrao()
   img='https://i.postimg.cc/hP412Ckb/baixados-removebg-preview.png'
   selecionado = "Cocô"
   preload()
   atualizar()
+
 }
 
 
 function oculos(){
+  padrao()
   img='https://i.postimg.cc/Njds101k/smiling-face-with-sunglasses-1f60e.png'
   selecionado = "Óculos"
   preload()
@@ -63,6 +68,7 @@ function oculos(){
 }
 
 function feliz(){
+  padrao()
   img='https://i.postimg.cc/132ThhPZ/8148ca973c5958c0fd6d58c133b9a5c5.png'
   selecionado = "Feliz"
   preload()
@@ -70,11 +76,35 @@ function feliz(){
 }
 
 function gabriel(){
+  padrao()
   img='https://i.postimg.cc/43d7pVtP/mascara-Personalizado-1.png'
   selecionado = "Gabriel"
   preload()
   atualizar()
 }
+
+function bigode(){
+  tamanho = 100
+  posx = 60
+  posy = 18
+  img='https://i.postimg.cc/3x3QzSGq/m.png'
+  selecionado = "Bigode"
+  preload()
+  atualizar()
+}
+
+function batom(){
+  tamanho = 100
+  posx = 55
+  posy = -20
+  img='https://i.postimg.cc/PxFvYgkv/l1.png'
+  selecionado = "Batom"
+  preload()
+  atualizar()
+}
+
+
+
 
 function atualizar(){
   document.getElementById("kaka").innerHTML = "Selecionado:"+ selecionado;

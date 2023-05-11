@@ -16,7 +16,7 @@
 
 <body background="fundo.jpg">
 <center>
-  <h3 class="btn btn-info">Máscara em Tempo Real</h3>
+  <h3 class="btn btn-info">Máscaras em Tempo Real</h3>
   <hr>
 </center>
 
@@ -28,12 +28,25 @@
 <br>
 <button class="botoes" onclick="coco()">💩</button>
 <button class="botoes" onclick="gabriel()"><img src="mascara.png" width="100px" height="100px" id="mascaraimg"></button>
-<h1 id="kaka">Selecionado:</h1>
-<button onclick="esconder()">Esconder</button>
 </div>
 
+<div id="filtros">
+  <h1>FILTROS:</h1>
 
-<div>
+  <button class="botoes" onclick="bigode()">👨</button>
+  <button class="botoes" onclick="batom()">💄</button>
+  <br>
+</div>
+<br>
+<button id="nada" class="btn btn-danger" onclick="esconder()">⛔</button>
+<h1 id="kaka">Selecionado:</h1>
+
+
+
+
+
+
+<div id="posicao">
 <label for="numero">Posição y(Padrão:302):</label>
 <input type="number" id="yy" onchange="mudarposisy()">
 <br>
@@ -53,6 +66,8 @@
 <br>
 <button onclick="takeSnapshot()" class="btn btn-success">Salvar</button>
 </div>
+
+
 
 
 
