@@ -1,115 +1,78 @@
-quickDrawDataset=["aircraft carrier","airplane","alarm clock","ambulance","angel","animal migration","ant","anvil","apple","arm","asparagus",
-                      "axe","backpack","banana","bandage","barn","baseball","baseball bat","basket","basketball","bat","bathtub","beach","bear",
-                      "beard","bed","bee","belt","bench","bicycle","binoculars","bird","birthday cake","blackberry","blueberry","book","boomerang",
-                      "bottlecap","bowtie","bracelet","brain","bread","bridge","broccoli","broom","bucket","bulldozer","bus","bush","butterfly",
-                      "cactus","cake","calculator","calendar","camel","camera","camouflage","campfire","candle","cannon","canoe","car","carrot",
-                      "castle","cat","ceiling fan","cello","cell phone","chair","chandelier","church","circle","clarinet","clock","cloud","coffee cup",
-                      "compass","computer","cookie","cooler","couch","cow","crab","crayon","crocodile","crown","cruise ship","cup","diamond","dishwasher",
-                      "diving board","dog","dolphin","donut","door","dragon","dresser","drill","drums","duck","dumbbell","ear", "elbow","elephant",
-                      "envelope","eraser","eye","eyeglasses","face","fan","feather","fence","finger","fire hydrant","fireplace","firetruck","fish",
-                      "flamingo","flashlight","flip flops","floor lamp","flower","flying saucer","foot","fork","frog","frying pan","garden","garden hose",
-                      "giraffe","goatee","golf club","grapes","grass","guitar","hamburger","hammer","hand","harp","hat","headphones","hedgehog","helicopter",
-                      "helmet","hexagon","hockey puck","hockey stick","horse","hospital","hot air balloon","hot dog","hot tub","hourglass","house",
-                      "house plant","hurricane","ice cream","jacket","jail","kangaroo","key","keyboard","knee","knife","ladder","lantern","laptop",
-                      "leaf","leg","light bulb","lighter","lighthouse","lightning","line","lion","lipstick","lobster","lollipop","mailbox","map","marker",
-                      "matches","megaphone","mermaid","microphone","microwave","monkey","moon","mosquito","motorbike","mountain","mouse","moustache","mouth",
-                      "mug","mushroom","nail","necklace","nose","ocean","octagon","octopus","onion","oven","owl","paintbrush","paint can","palm tree","panda",
-                      "pants","paper clip","parachute","parrot","passport","peanut","pear","peas","pencil","penguin","piano","pickup truck","picture frame",
-                      "pig","pillow","pineapple","pizza","pliers","police car","pond","pool","popsicle","postcard","potato","power outlet","purse","rabbit",
-                      "raccoon","radio","rain","rainbow","rake","remote control","rhinoceros","rifle","river","roller coaster","rollerskates","sailboat",
-                      "sandwich","saw","saxophone","school bus","scissors","scorpion","screwdriver","sea turtle","see saw","shark","sheep","shoe","shorts",
-                      "shovel","sink","skateboard","skull","skyscraper","sleeping bag","smiley face","snail","snake","snorkel","snowflake","snowman",
-                      "soccer ball","sock","speedboat","spider","spoon","spreadsheet","square","squiggle","squirrel","stairs","star","steak","stereo",
-                      "stethoscope","stitches","stop sign","stove","strawberry","streetlight","string bean","submarine","suitcase","sun","swan","sweater",
-                      "swingset","sword","syringe","table","teapot","teddy-bear","telephone","television","tennis racquet","tent","The Eiffel Tower",
-                      "The Great Wall of China","The Mona Lisa","tiger","toaster","toe","toilet","tooth","toothbrush","toothpaste","tornado","tractor",
-                      "traffic light","train","tree","triangle","trombone","truck","trumpet","tshirt","umbrella","underwear","van","vase","violin",
-                      "washing machine","watermelon","waterslide","whale","wheel","windmill","wine bottle","wine glass","wristwatch","yoga","zebra","zigzag"]
+x = 0;
+y = 0;
 
-                      randomNo = Math.floor((Math.random() *quickDrawDataset.length)+1)
-                      
-                      Element_of_array = quickDrawDataset[randomNo]
-                      document.getElementById("scatchName").innerHTML = 'Esboço a ser desenhado: ' + Element_of_array
-                     
-timeCounter = 0
-timerCheck = ""
-drawScatch = ""
-AnswerHolder = "" 
-score = 0
+screenwidth = 0
+screenheight = 0
 
+tonumber = 0
 
-function setup(){
-    canvas = createCanvas(300, 300)
-    canvas.center()
-    canvas.mouseReleased(classifyCanvas)
-    synth = window.speechSynthesis
-}
+speakData = ''
+apple = ''
+drawApple = "";
 
-function clearCanvas(){
-    background("white")
-
-}
+var SpeechRecognition = window.webkitSpeechRecognition;
+  
+var recognition = new SpeechRecognition();
 
 function preload(){
-    classifier = ml5.imageClassifier("DoodleNet")
-    
-}
+  apple = loadImage('apple.png')
+  }
 
-function updateCanvas(){
-    background("white")
-    randomNo = Math.floor((Math.random() *quickDrawDataset.length)+1)
 
-                      Element_of_array = quickDrawDataset[randomNo]
-                      document.getElementById("scatchName").innerHTML = 'Esboço a ser desenhado: ' + Element_of_array
-}
+function start()
+{
+  document.getElementById("status").innerHTML = "O sistema está ouvindo. Por favor, fale.";  
+  recognition.start();
+} 
+ 
+recognition.onresult = function(event) {
 
-function checkScatch(){
-    timeCounter ++ 
-    document.getElementById("tempo").innerHTML = 'Tempo: ' + timeCounter
-    if(timeCounter > 1500){
-        timeCounter = 0
-        timerCheck = "Completo"
+ console.log(event); 
+
+ content = event.results[0][0].transcript;
+
+    document.getElementById("status").innerHTML = "A fala foi reconhecida: " + content; 
+    tonumber = Number(content)
+    if(Number.isInteger(tonumber)){
+      {
+        document.getElementById("status").innerHTML = "A maçã começou a ser desenhada."; 
+        drawApple = "set";
+      }}
+      else
+      {
+        document.getElementById("status").innerHTML = "O número não foi reconhecido."; 
+      }
     }
-    if(timerCheck == "Completo"|| AnswerHolder == "set"){
-        timerCheck = ""
-        AnswerHolder = ""
-        updateCanvas()
+  
+
+function setup() {
+screenwidth = window.innerWidth
+screenheight = window.innerHeight
+  canvas = createCanvas(screenwidth, screenheight-150)
+canvas.position(0, 150)
+}
+
+function draw() {
+  if(drawApple == "set")
+  {
+    for(var i = 1 ; i <= toNumber; i++){
+      x = Math.floor(Math.random()*700)
+      y = Math.floor(Math.random()*400)
+      image(apple, x, y, 50, 50)
     }
-
+    document.getElementById("status").innerHTML = toNumber + " maçãs desenhadas";
+    speakData = toNumber + " maçãs desenhadas"
+    speak()
+    drawApple = "";
+  }
 }
 
-function draw(){
-    strokeWeight(13)
-    stroke(0)
-    if(mouseIsPressed){
-        line(pmouseX, pmouseY, mouseX, mouseY)
-    }
-    checkScatch()
+function speak(){
+    var synth = window.speechSynthesis;
 
+    var utterThis = new SpeechSynthesisUtterance(speakData);
+
+    synth.speak(utterThis);
+
+    speakData = "";
 }
-
-function classifyCanvas(){
-    classifier.classify(canvas, gotResults)
-}
-
-function gotResults(error, results){
-    if(error){
-        console.error(error)
-    }
-var results = results[0].label
-document.getElementById("label").innerHTML = 'Nome:' + results;
-document.getElementById("confidence").innerHTML = 'Precisão:' + Math.round(results[0].confidence*100) + '%';
-utterThis = new SpeechSynthesisUtterance(results[0].label)
-synth.speak(utterThis)
-}
-
-
-
-
-
-
-
-
-
-
-
