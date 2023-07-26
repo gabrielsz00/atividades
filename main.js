@@ -1,8 +1,23 @@
-noseX = 0
-noseY = 0
+
+
+
+
+
+
+
+
+
+
 diference = 0
 rightWristX = 0
 leftWristX = 0
+
+
+
+function modelLoaded(){
+    console.log('Modelo carregado!')
+}
+
 
 function setup(){
     video = createCapture(VIDEO)
@@ -17,15 +32,24 @@ function setup(){
 
 function draw(){
 background('#969A97')
-
+fill('#2DC2D9')
+text("Gabriel", 0, 275)
+stroke('#F90093')
+textSize(diference)
 }
 
-function modelLoaded(){
-    console.log('Modelo carregado!')
-}
+
 
 function gotPoses(results){
-    if (results.lenth > 0){
+    if (results.length > 0){
          console.log(results)
-    }
+
+         leftWristX = results[0].pose.leftWrist.x
+         rightWristX = results[0].pose.rightWrist.x
+
+        diference = floor(leftWristX - rightWristX)
+
+        console.log("leftWristX=" + leftWristX + "rightWristX=" + rightWristX + "diference=" + diference)
+        }
 }
+       
