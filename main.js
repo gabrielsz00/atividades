@@ -35,6 +35,25 @@ function draw(){
 }
 
 function play(){
-    song1.play()
+    song.play()
+    song.rate(1)
+    song.setVolume(1)
+}
 
+function gotPoses(results){
+    if(results.length > 0){
+console.log(results)
+scorerigthwrist = results[0].pose.keypoints[10].score
+scoreleftwrist = results[0].pose.keypoints[9].score
+leftwristx = results[0].pose.leftWrist.x    
+leftwristy = results[0].pose.leftWrist.y
+
+rightwristx = results[0].pose.rightWrist.x    
+rightwristy = results[0].pose.rightWrist.y  
+
+console.log(leftwristx, leftwristy)
+console.log(rightwristx, rightwristy)
+console.log(scorerigthwrist, scoreleftwrist)
+
+}
 }
