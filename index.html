@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<title>Detecção de Objetos</title>
+	<title>Destecção de bebês</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,18 +13,15 @@
   
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body background="background.jpg">
+<body background="background.png">
   
   <center>
-    <h1 class="btn btn-info heading">Detecção de Objetos</h1>
+    <h1 class="btn btn-info heading">IA DE MONITORAMENTO DE BEBÊS</h1>
+    <h3>Se nenhuma pessoa/bebê for detectada, o alarme será tocado</h3>
+    <h3 id="status" class="btn btn-danger"></h3>
+    <h3 id="numberOfObjects" class="btn btn-warning"></h3>
 <br>
-    <button class="btn btn-success" onclick="click1()">Cachorro</button>
-    <br>
-    
-    <button class="btn btn-success" onclick="click2()">Pássaro</button>
-    <br>
-    <button class="btn btn-success" onclick="click3()">Bicicleta</button>
-    <br>
+    <button onclick="start()" class="btn btn-danger" id="startmodel">Iniciar</button>
   </center>
 
   <script src="main.js"></script>
