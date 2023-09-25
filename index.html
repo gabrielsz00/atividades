@@ -1,7 +1,7 @@
 <html>
 <head>
 
-	<title>Destecção de bebês</title>
+	<title>IA localizadora de objetos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -13,18 +13,25 @@
   
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body background="background.png">
-  
-  <center>
-    <h1 class="btn btn-info heading">IA DE MONITORAMENTO DE BEBÊS</h1>
-    <h3>Se nenhuma pessoa/bebê for detectada, o alarme será tocado</h3>
-    <h3 id="status" class="btn btn-danger"></h3>
-    <h3 id="numberOfObjects" class="btn btn-warning"></h3>
-<br>
-    <button onclick="start()" class="btn btn-danger" id="startmodel">Iniciar</button>
-  </center>
 
-  <script src="main.js"></script>
+<body background="background.jpg">
+<center>
+<h1 class="btn btn-primary heading">IA localizadora de objetos</h1>
+<label>Nome do objeto em inglês:</label>
+<input type="text" id="texto"></input>
+<br> <br>
+<button onclick="start()" id="start" class="btn btn-success">Iniciar</button>
+<br> <br>
+<h3 id="numberOfObjects" class="btn btn-info"></h3>
+<br> <br>
+<h3 id="status" class="btn btn-danger"></h3>
+
+
+</center>
+<div class="footer">Desenvolvido por Gabriel</div>
+
+<script src="main.js"></script>
 
 </body>
+
 </html>
