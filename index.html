@@ -17,7 +17,10 @@
 <body background="background.jpg">
 <center>
 <h1 class="btn btn-primary heading">IA localizadora de objetos</h1>
-<label>Nome do objeto em inglês:</label>
+<h4 class="btn btn-primary" id="des">O nome de entrada que você fornecer deverá ser o mesmo presente no modelo CoCo, apenas assim o objeto será detectado. Portanto, uma vez que o modelo CoCo apresenta todos os seus objetos em inglês, você deverá 
+  <br> a nome do objeto desejado também em inglês, pois ele não realizará a identicação caso utilize o nome um objeto em português</h4>
+    <br> <br>
+  <label>Nome do objeto em inglês:</label>
 <input type="text" id="texto"></input>
 <br> <br>
 <button onclick="start()" id="start" class="btn btn-success">Iniciar</button>
