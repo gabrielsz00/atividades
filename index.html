@@ -1,41 +1,37 @@
+<!--created by prashant shukla-->
+<!DOCTYPE html>
 <html>
-<head>
+    <head>
+        <title>Ping-Pong</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+     
+        <link rel="stylesheet" href="style.css">
+        <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/addons/p5.sound.min.js"></script>   
 
-	<title>IA localizadora de objetos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body background="background1.jpg">
+        <center>
+          <div class="btn btn-warning heading">
+            <h3>Ping Pong com IA</h3>
+            <button class="btn btn-primary" data-toggle = "modal" data-target="#myModal">  Instruções        </button>
+          </div>
+    
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
-
-  <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
-  
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body background="background.jpg">
-<center>
-<h1 class="btn btn-primary heading">IA localizadora de objetos</h1>
-<h4 class="btn btn-primary" id="des">O nome de entrada que você fornecer deverá ser o mesmo presente no modelo CoCo, apenas assim o objeto será detectado. Portanto, uma vez que o modelo CoCo apresenta todos os seus objetos em inglês, você deverá 
-  <br> a nome do objeto desejado também em inglês, pois ele não realizará a identicação caso utilize o nome um objeto em português</h4>
     <br> <br>
-  <label>Nome do objeto em inglês:</label>
-<input type="text" id="texto"></input>
-<br> <br>
-<button onclick="start()" id="start" class="btn btn-success">Iniciar</button>
-<br> <br>
-<h3 id="numberOfObjects" class="btn btn-info"></h3>
-
-<h3 id="status" class="btn btn-danger"></h3>
-<h3 id="encontrado" class="btn btn-warning">Não encontrado</h3>
-
-
-</center>
-<div class="footer">Desenvolvido por Gabriel</div>
-
-<script src="main.js"></script>
-
-</body>
-
+    <button class="btn btn-success" onclick="startGame()" id="start">Jogar</button>
+    <br> <br>
+    <h3 id="status" class="btn btn-warning"></h3>
+    <br> <br>
+    <div id="canvas"></div>
+    <div id="gameconsole"></div>
+        </center>
+    
+    
+        <script src="main.js"></script>
+    </body>
 </html>
