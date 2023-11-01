@@ -30,11 +30,40 @@ ball = {
 
 function setup(){
   canvas =  createCanvas(700,550);
+	canvas.parent('canvas')
+
+	video = createCapture(VIDEO)
+	video.size(700, 550)
+  video.hide()
+
+	poseNet = ml5.poseNet(video, modelLoaded)
+	poseNet.on('pose', gotPoses)
+}
+
+function modelLoaded(){
+  console.log("posenet inicializado!")
+}
+
+
+
+function gotPoses(results){
+	if (results.lenght > 0)
+	{
+		rightWristY = results[0].pose.rightWristX.y
+    rightWristX = results[0].pose.rightWristX.X
+		scoreRightWrist = results[0].pose.keypoints[10].score;
+    console.log(scoreRightWrist)
+	}
+}
+
+function startGame(){
+gameStatus = "start";
+document.getElementById("status").innerHTML = "game esta carregado!"
 }
 
 
 function draw(){
-
+if (gameStatus == "start"){
   background(0); 
 
   fill("black");
@@ -73,6 +102,7 @@ function draw(){
 
   //Chamar a função move() (muito importante para o jogo)
   move();
+}
 }
 
 
