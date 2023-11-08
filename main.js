@@ -58,7 +58,7 @@ function gotPoses(results){
 
 function startGame(){
 gameStatus = "start";
-document.getElementById("status").innerHTML = "game esta carregado!"
+document.getElementById("status").innerHTML = "game esta carregando!"
 }
 
 
